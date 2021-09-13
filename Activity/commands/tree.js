@@ -1,10 +1,11 @@
 let fs=require('fs');
 let path=require('path');
+const chalk = require('chalk');
 
 function treeFn(srcpath){
     let basename=path.basename(srcpath);
-    console.log(basename);
-    console.log("\n\t"+"└──");
+    console.log(chalk.blueBright(basename));
+    console.log(chalk.yellow("\n\t"+"└──"));
     let content =fs.readdirSync(srcpath);
 
     let allEntities="";
@@ -12,7 +13,7 @@ function treeFn(srcpath){
         allEntities+="\n\r\t"+"├──"+content[i];
         //console.log(content[i]);
     }
-    console.log(allEntities);
+    console.log(chalk.greenBright(allEntities));
 }
 
 module.exports={

@@ -1,4 +1,5 @@
 let fs=require('fs');
+const chalk = require('chalk');
 const { type } = require('os');
 let path =require('path');
 let types = {
@@ -14,7 +15,7 @@ function organizeFn(srcpath){
 
     // create path for organized folder
     let organizeFolder =path.join(srcpath,'organizedFile');
-    console.log(organizeFolder);
+    console.log(chalk.green(organizeFolder));
 
     //create folder using path
     if(!fs.existsSync(organizeFolder)){
